@@ -18,5 +18,14 @@ typedef struct{String matricula;
 }Vehiculo;
 
 
+void MostrarVehiculo(Vehiculo v);
+void DarMatricula(Vehiculo v, String &mat);
+long int DarCedula(Vehiculo v);
+Hora DarHoraIng(Vehiculo v);
+TipoVehiculo DarTipoVehiculo(Vehiculo v);
+void DarMarcaAuto(Vehiculo v, String &s);
+int DarAnioAuto(Vehiculo v);
+void DarModeloCam(Vehiculo v, String &s);
+int DarAnioFabCamion(Vehiculo v);
 
 #endif // VEHICULO_H_INCLUDED
