@@ -1,6 +1,6 @@
 #ifndef TIPOVEHICULO_H_INCLUDED
 #define TIPOVEHICULO_H_INCLUDED
 
-typedef enum{AUTO, CAMIONETA} TipoVehiculo:
+typedef enum{AUTO, CAMIONETA} TipoVehiculo;
 
 #endif // TIPOVEHICULO_H_INCLUDED
