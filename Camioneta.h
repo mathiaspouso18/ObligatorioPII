@@ -8,5 +8,7 @@ typedef struct{String Modelo;
 void DarModelo(Camioneta c, String &modelo);
 long int DarCapacidadCarga(Camioneta c);
 
+void CargarCarmioneta(Camioneta &c, String s, int x);
+
 
 #endif // CAMIONETA_H_INCLUDED

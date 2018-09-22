@@ -33,8 +33,8 @@ void MostrarVehiculo(Vehiculo v)
 
 void CrearVehiculo(Vehiculo v)
 {
-    int tp, anio;
-    String marca;
+    int tp, anio,ccarga;
+    String marca,modelo;
     printf("Ingrese la matricula: ");
     Scan(v.matricula);
     printf("Ingrese departamento: ");
@@ -57,6 +57,11 @@ void CrearVehiculo(Vehiculo v)
     else
     {
         v.tipoV = CAMIONETA;
+        printf("Ingrese el Modelo: ");
+        Scan(modelo);
+        printf("Ingrese la Capacidad de Carga: ");
+        scanf("%d", &ccarga);
+        CargarCarmioneta(v.Datos.c, modelo, ccarga);
     }
 
 
