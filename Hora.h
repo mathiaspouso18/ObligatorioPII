@@ -2,11 +2,11 @@
 #define HORA_H_INCLUDED
 #include <stdio.h>
 
-typedef struct{int hora;
+typedef struct{int _hora;
 			   int minutos;} Hora;
 
 void CargarHora(Hora &h);
-void MostarHora(Hora h);
+void MostrarHora(Hora h);
 int DarHora(Hora h);
 int DarMinutos(Hora h);
 

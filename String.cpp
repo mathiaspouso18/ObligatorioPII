@@ -1,12 +1,10 @@
 #include "String.h"
-#include <stdio.h>
-
 
 void Scan(String &s)
 {
     char c;
     int i = 0;
-
+    fflush(stdin); //Tuve que agregar esto para limpiar el buffer ya que no me dejaba insertar la matricula
     scanf("%c", &c);
     while(c != '\n' && i < MaxString - 1)
     {
@@ -36,6 +34,21 @@ void Print(String s)
     {
         printf("%c", s[i]);  i++;
     }
+}
+
+boolean streq (String s1, String s2)
+{
+     int i = 0;
+     boolean iguales = TRUE;
+    while (iguales && (s1[i] != '\0') && (s2[i] != '\0'))
+    {
+         if (s1[i] != s2[i])
+         iguales = FALSE;
+         i++;
+    }
+     if ((s1[i] != '\0') || (s2[i] != '\0'))
+     iguales = FALSE;
+        return iguales;
 }
 
 

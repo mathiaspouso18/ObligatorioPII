@@ -3,34 +3,34 @@
 //Hora valida de 8 a 22. Minutos de 0 a 59
 void CargarHora(Hora &h)
 {
-    int hora, minutos;
+    int _hora, minutos;
 
-    printf("Ingrese la hora: ");
-    scanf("%d", hora);
+    printf("\t\tIngrese la hora: ");
+    scanf("%d", _hora);
 
-    while(hora < 8 && hora > 22)
+    while(_hora < 8 && _hora > 22)
     {
-        printf("La hora debe estar entre 8 y 22");
-        scanf("%d", hora);
+        printf("\t\tLa hora debe estar entre 8 y 22");
+        scanf("%d", _hora);
     }
-    h.hora = hora;
+    h._hora = _hora;
 
-    printf("Ingrese los minutos: ");
+    printf("\t\tIngrese los minutos: ");
     scanf("%d", minutos);
     while(minutos < 0 && minutos > 59)
     {
-        printf("Los minutos deben estar entre 0 y 59");
+        printf("\t\tLos minutos deben estar entre 0 y 59");
         scanf("%d", minutos);
     }
     h.minutos = minutos;
 }
-void MostarHora(Hora h)
+void MostrarHora(Hora h)
 {
-    printf("%d:%d", h.hora, h.minutos);
+    printf("%d:%d", h._hora, h.minutos);
 }
 int DarHora(Hora h)
 {
-    return h.hora;
+    return h._hora;
 }
 int DarMinutos(Hora h)
 {

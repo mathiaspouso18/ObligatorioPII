@@ -3,14 +3,13 @@
 void MostrarVehiculo(Vehiculo v)
 {
     String s;
-
     printf("Matricula: ");
     Print(v.matricula);
     printf("Departamento: ");
     Print(v.departamento);
     printf("Cedula del conductor: %ld", v.CI);
     printf("Hora de ingreso: ");
-    MostarHora(v.horaIng);
+    MostrarHora(v.horaIng);
     printf("Tipo de Vehiculo: ");
     if(v.tipoV == AUTO)
     {
@@ -33,14 +32,18 @@ void MostrarVehiculo(Vehiculo v)
 
 void CrearVehiculo(Vehiculo v)
 {
-    int tp, anio,ccarga;
+    int tp, anio, ccarga;
     String marca,modelo;
-    printf("Ingrese la matricula: ");
+
+    printf("\t\t");
+    printf("Ingrese matricula: ");
     Scan(v.matricula);
+    printf("\t\t");
     printf("Ingrese departamento: ");
     Scan(v.departamento);
+    printf("\t\t");
     printf("Ingrese cedula del conductor: ");
-    scanf("%ld", v.CI);
+    scanf("%d", v.CI);
     CargarHora(v.horaIng);
     printf("Ingrese el tipo de vehiculo 1 - Auto; 2 - Camioneta");
     scanf("%d", &tp);

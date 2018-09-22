@@ -1,8 +1,13 @@
 #include"Estacionamiento.h"
-void insertarVehiculo(ArregloVeh &arreV)
+
+void IngresarVehiculo(ArregloVeh &arreV)
 {
     Vehiculo v;
-    printf("Ingrese vehiculo");
+    printf("\n\t");
+    printf("Menu Ingreso de Vehiculos");
+    printf("\n\n\t");
+    printf("Informacion de vehiculo:", arreV.tope + 1);
+    printf("\n\n");
     CrearVehiculo(v);
     arreV.arre[arreV.tope] = v;
     arreV.tope++;
@@ -13,23 +18,22 @@ void insertarVehiculo(ArregloVeh &arreV)
 void inicializartope(ArregloVeh &v)
 {
        v.tope=0;
-
 }
 
 
-boolean ExisteVehiuculo(ArregloVeh arreV, String s)
+boolean ExisteVehiculo(ArregloVeh arreV, String s)
 {   String s1;
     boolean Existe=FALSE;
-int i=0;
-do
-{
-       DarMatricula(arreV.arre[i],s1);
-       if (streq (s1,s) == TRUE)
-       Existe=TRUE;
-       else
-       i++;
+    int i=0;
+    do
+    {
+           DarMatricula(arreV.arre[i],s1);
+           if (streq (s1,s) == TRUE)
+           Existe=TRUE;
+           else
+           i++;
 
-}while((i<arreV.tope)&&(Existe==FALSE));
+    }while((i<arreV.tope)&&(Existe==FALSE));
 
 return Existe;
 }
