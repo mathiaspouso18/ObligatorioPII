@@ -17,7 +17,7 @@ typedef struct{String matricula;
 
 }Vehiculo;
 
-void CrearVehiculo(Vehiculo v);
+void CrearVehiculo(Vehiculo &v);
 void MostrarVehiculo(Vehiculo v);
 void DarMatricula(Vehiculo v, String &mat);
 long int DarCedula(Vehiculo v);

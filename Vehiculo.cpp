@@ -30,7 +30,7 @@ void MostrarVehiculo(Vehiculo v)
     }
 }
 
-void CrearVehiculo(Vehiculo v)
+void CrearVehiculo(Vehiculo &v)
 {
     int tp, anio, ccarga;
     String marca,modelo;
@@ -43,15 +43,18 @@ void CrearVehiculo(Vehiculo v)
     Scan(v.departamento);
     printf("\t\t");
     printf("Ingrese cedula del conductor: ");
-    scanf("%d", v.CI);
+    scanf("%ld", &v.CI);
     CargarHora(v.horaIng);
-    printf("Ingrese el tipo de vehiculo 1 - Auto; 2 - Camioneta");
+    printf("\t\t");
+    printf("Ingrese el tipo de vehiculo 1 - Auto; 2 - Camioneta: ");
     scanf("%d", &tp);
     if(tp == 1)
     {
         v.tipoV = AUTO;
+        printf("\t\t");
         printf("Ingrese la marca: ");
         Scan(marca);
+        printf("\t\t");
         printf("Ingrese el anio: ");
         scanf("%d", &anio);
         CargarAuto(v.Datos.a, marca, anio);
@@ -60,8 +63,10 @@ void CrearVehiculo(Vehiculo v)
     else
     {
         v.tipoV = CAMIONETA;
+        printf("\t\t");
         printf("Ingrese el Modelo: ");
         Scan(modelo);
+        printf("\t\t");
         printf("Ingrese la Capacidad de Carga: ");
         scanf("%d", &ccarga);
         CargarCarmioneta(v.Datos.c, modelo, ccarga);
