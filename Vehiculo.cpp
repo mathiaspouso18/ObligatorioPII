@@ -3,30 +3,43 @@
 void MostrarVehiculo(Vehiculo v)
 {
     String s;
+    printf("\t\t");
+    printf("Datos vehiculo");
+    printf("\n\t\t");
     printf("Matricula: ");
     Print(v.matricula);
+    printf("\n\t\t");
     printf("Departamento: ");
     Print(v.departamento);
+    printf("\n\t\t");
     printf("Cedula del conductor: %ld", v.CI);
+    printf("\n\t\t");
     printf("Hora de ingreso: ");
     MostrarHora(v.horaIng);
+    printf("\n\t\t");
     printf("Tipo de Vehiculo: ");
     if(v.tipoV == AUTO)
     {
         printf("Auto");
+        printf("\n\t\t");
         printf("Marca: ");
         DarMarca(v.Datos.a, s);
         Print(s);
+        printf("\n\t\t");
         printf("Anio: %d", DarAnio(v.Datos.a));
+        printf("\n");
 
     }
     else
     {
         printf("Camioneta");
+        printf("\n\t\t");
         printf("Modelo: ");
         DarModelo(v.Datos.c, s);
         Print(s);
+        printf("\n\t\t");
         printf("Capacidad de carga: %d", DarCapacidadCarga(v.Datos.c));
+        printf("\n");
     }
 }
 

@@ -22,7 +22,8 @@ void inicializartope(ArregloVeh &v)
 
 
 boolean ExisteVehiculo(ArregloVeh arreV, String s)
-{   String s1;
+{
+    String s1;
     boolean Existe=FALSE;
     int i=0;
     do
@@ -35,51 +36,75 @@ boolean ExisteVehiculo(ArregloVeh arreV, String s)
 
     }while((i<arreV.tope)&&(Existe==FALSE));
 
-return Existe;
+    return Existe;
 }
 
 
 int DarPosicion(ArregloVeh arreV, String s)
-{String s1;
-    boolean Existe=FALSE;
-int i=0;
-do
 {
-       DarMatricula(arreV.arre[i],s1);
-       if (streq (s1,s) == TRUE)
-       Existe=TRUE;
-       else
-       i++;
+    String s1;
+    boolean Existe=FALSE;
+    int i=0;
+    do
+    {
+           DarMatricula(arreV.arre[i], s1);
+           if (streq (s1,s) == TRUE)
+           Existe=TRUE;
+           else
+           i++;
 
-}while((i<arreV.tope)&&(Existe==FALSE));
+    }while((i<arreV.tope)&&(Existe==FALSE));
 
-return i;
+    return i;
 }
 
 
 void RegistrarPartida (ArregloVeh &arreV,Hora &h, String matricula)
 {
-    int i= 0;
-    int p =0;
+    int i = 0;
+    int p = 0;
 
 
-   if (DarPosicion(arreV,matricula)<arreV.tope)
+   if (DarPosicion(arreV,matricula) < arreV.tope)
    {
         p=DarPosicion(arreV,matricula);
-       arreV.arre[arreV.tope]=arreV.arre[p];
-           for(p=p+1;p<arreV.tope;p++)
-            {
-                arreV.arre[p-1]=arreV.arre[p];
-            }
-            arreV.tope--;
+        arreV.arre[arreV.tope]=arreV.arre[p];
+        for(p=p+1;p<arreV.tope;p++)
+        {
+           arreV.arre[p-1]=arreV.arre[p];
+        }
+        arreV.tope--;
 
 
-    printf("Hora de Salida\n");
-    CargarHora(h);
+        printf("Hora de Salida\n");
+        CargarHora(h);
 
-    }
+   }
    else
+   {
         printf("No se encuentra la Matricula para Registrar su partida");
+   }
+}
 
+void DetallePorMatricula(ArregloVeh arreV)
+{
+    int posicion;
+    String matricula;
 
+    printf("\n");
+    printf("\tIngrese la matricula por la cual buscar: ");
+    Scan(matricula);
+    posicion = DarPosicion(arreV, matricula);
+
+    if(posicion < 0 || posicion > arreV.tope)
+    {
+        printf("\t\t");
+        printf("No existe vehiculo registrado con esa matricula.");
+        printf("\n");
+    }
+    else
+    {
+        printf("\n");
+        MostrarVehiculo(arreV.arre[posicion]);
+    }
 }

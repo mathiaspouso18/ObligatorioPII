@@ -23,11 +23,16 @@ int main()
             break;
             case 3: MenuListados(opcion2);
             break;
+        }
 
+        switch(opcion2)
+        {
+            case 5: DetallePorMatricula(arreV);
+            break;
         }
 
     }while(opcion != 4);
 
-
-
+    opcion = 0;//limpio las variables dejandolas en 0;
+    opcion = 0;//limpio las variables dejandolas en 0;
 }
