@@ -14,4 +14,11 @@ void insertarVehiculo(ArregloVeh &arreV );
 void inicializartope(ArregloVeh &arreV);
 //Comprobar si existe vehiculo en el arreglo con matricula
 boolean ExisteVehiuculo(ArregloVeh arreV, String s);
+//Fado una Matricula Devolvemos su posicion en el arreglo
+int DarPosicion(ArregloVeh arreV, String s);
+
+//Dado una Matricula Eliminar
+void RegistrarPartida (ArregloVeh &arreV,Hora &h, String matricula);
+
+
 #endif // ESTACIONAMIENTO_H_INCLUDED
