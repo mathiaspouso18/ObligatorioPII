@@ -1,13 +1,18 @@
 #include"Auto.h"
-void DarMarca(Auto a, String &s)
+
+
+void CargarAuto(Auto &a, String marca, int anio)
 {
-StrCopy(a.Marca,s);
-
-
+    StrCopy(marca, a.Marca);
+    a.anio = anio;
 }
 
-
-int Daranio(Auto a)
+void DarMarca(Auto a, String &s)
 {
- return a.anio;
+    StrCopy(a.Marca,s);
+}
+
+int DarAnio(Auto a)
+{
+    return a.anio;
 }
