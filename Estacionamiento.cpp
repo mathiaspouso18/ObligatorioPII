@@ -3,15 +3,25 @@
 void IngresarVehiculo(ArregloVeh &arreV)
 {
     Vehiculo v;
+    String matricula;
     printf("\n\t");
     printf("Menu Ingreso de Vehiculos");
     printf("\n\n\t");
     printf("Informacion de vehiculo:", arreV.tope + 1);
     printf("\n\n");
-    CrearVehiculo(v);
-    arreV.arre[arreV.tope] = v;
-    arreV.tope++;
-
+    printf("\t\t");
+    printf("Ingrese matricula: ");
+    Scan(matricula);
+    if(!ExisteVehiculo(arreV, matricula))
+    {
+        CrearVehiculo(v, matricula);
+        arreV.arre[arreV.tope] = v;
+        arreV.tope++;
+    }
+    else
+    {
+        printf("\t\tYa se ingreso un vehiculo con esa matricula\n");
+    }
 }
 
 
@@ -154,23 +164,31 @@ void ListarTodosVehiculos(ArregloVeh arreV)
     int i;
     String matricula;
     printf("\n");
-    for(i = 0; i < arreV.tope; i++)
+
+    if(arreV.tope == 0)
     {
-        DarMatricula(arreV.arre[i], matricula);
-        printf("\t");
-        printf("Matricula: ");
-        Print(matricula);
-        printf(" | ");
-        printf("Cedula: %d", DarCedula(arreV.arre[i]));
-        printf(" | ");
-        printf("%Hora de ingreso: %d:%d", DarHora(DarHoraIng(arreV.arre[i])), DarMinutos(DarHoraIng(arreV.arre[i])));
-        printf("\n");
+        printf("\tNo hay vehiculos registrados\n");
+    }
+    else
+    {
+        for(i = 0; i < arreV.tope; i++)
+        {
+            DarMatricula(arreV.arre[i], matricula);
+            printf("\t");
+            printf("Matricula: ");
+            Print(matricula);
+            printf(" | ");
+            printf("Cedula: %d", DarCedula(arreV.arre[i]));
+            printf(" | ");
+            printf("%Hora de ingreso: %d:%d", DarHora(DarHoraIng(arreV.arre[i])), DarMinutos(DarHoraIng(arreV.arre[i])));
+            printf("\n");
+        }
     }
 }
 
 void ListarCantidadHoraDeterminada(ArregloVeh arreV)
 {
-    int _hora, minutos, i;
+    int _hora, minutos, i, contador = 0;
 
     printf("\n\tIngreso de hora actual: \n");
     printf("\t\tIngrese hora: ");
@@ -199,24 +217,32 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
             if(DarMinutos(DarHoraIng(arreV.arre[i])) == minutos)
             {
                 MostrarVehiculo(arreV.arre[i]);
+                contador++;
             }
         }
     }
+    if(contador == 0)
+        printf("\tNo hay vehiculos registrados para la hora %d:%d\n", _hora, minutos);
 }
 
 void ListarCamionetasCapCarga(ArregloVeh arreV)
 {
-    int i;
-    int capCarga = 0;
+    int i, capCarga = 0, contador = 0;
     printf("\n\tIngrese capacidad de carga: ");
     scanf("%d", &capCarga);
     printf("\n");
+
     for(i = 0; i < arreV.tope; i++)
     {
         if(DarTipoVehiculo(arreV.arre[i]) == CAMIONETA)
             if(DarCapacidadCarga(arreV.arre[i]) > capCarga)
+            {
                 MostrarVehiculo(arreV.arre[i]);
-
-                printf("\n");
+                contador++;
+            }
+            printf("\n");
     }
+
+    if(contador == 0)
+        printf("\tNo hay vehiculos registrados\n");
 }

@@ -43,15 +43,13 @@ void MostrarVehiculo(Vehiculo v)
     }
 }
 
-void CrearVehiculo(Vehiculo &v)
+void CrearVehiculo(Vehiculo &v, String matricula)
 {
     int tp, anio;
     long int ccarga;
     String marca,modelo;
 
-    printf("\t\t");
-    printf("Ingrese matricula: ");
-    Scan(v.matricula);
+    StrCopy(matricula, v.matricula);
     printf("\t\t");
     printf("Ingrese departamento: ");
     Scan(v.departamento);
