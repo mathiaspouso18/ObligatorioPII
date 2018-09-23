@@ -5,10 +5,7 @@
 typedef struct{String Modelo;
                long int CapacidadCarga;} Camioneta;
 
-void DarModelo(Camioneta c, String &modelo);
-long int DarCapacidadCarga(Camioneta c);
-
-void CargarCarmioneta(Camioneta &c, String s, int x);
+void CargarCarmioneta(Camioneta &c, String s, long int x);
 
 
 #endif // CAMIONETA_H_INCLUDED

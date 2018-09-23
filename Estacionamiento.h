@@ -27,4 +27,8 @@ void MostrarCantidadPorDepto(ArregloVeh arreV);
 
 void ListarTodosVehiculos(ArregloVeh arreV);
 
+void ListarCantidadHoraDeterminada(ArregloVeh arreV);
+
+void ListarCamionetasCapCarga(ArregloVeh arreV);
+
 #endif // ESTACIONAMIENTO_H_INCLUDED

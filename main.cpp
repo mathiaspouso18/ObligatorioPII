@@ -29,11 +29,15 @@ int main()
         {
             case 2: MostrarConteoCantidades(arreV);
             break;
-            case 3: MostrarConteoCantidades(arreV);
+            case 3: MostrarCantidadPorDepto(arreV);
             break;
             case 4: ListarTodosVehiculos(arreV);
             break;
             case 5: DetallePorMatricula(arreV);
+            break;
+            case 6: ListarCantidadHoraDeterminada(arreV);
+            break;
+            case 7: ListarCamionetasCapCarga(arreV);
             break;
         }
         opcion2 = 0;//limpio las variables dejandolas en 0;

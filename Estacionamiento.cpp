@@ -39,7 +39,6 @@ boolean ExisteVehiculo(ArregloVeh arreV, String s)
     return Existe;
 }
 
-
 int DarPosicion(ArregloVeh arreV, String s)
 {
     String s1;
@@ -154,5 +153,55 @@ void ListarTodosVehiculos(ArregloVeh arreV)
         printf(" | ");
         printf("%Hora de ingreso: %d:%d", DarHora(DarHoraIng(arreV.arre[i])), DarMinutos(DarHoraIng(arreV.arre[i])));
         printf("\n");
+    }
+}
+
+void ListarCantidadHoraDeterminada(ArregloVeh arreV)
+{
+    int _hora, minutos, i;
+
+    printf("\n\tIngreso de hora actual: \n");
+    printf("\t\tIngrese hora: ");
+    scanf("%d", &_hora);
+
+    while(_hora < 8 || _hora > 22)
+    {
+        printf("\t\tLa hora debe estar entre 8 y 22; Ingrese nuevamente: ");
+        scanf("%d", &_hora);
+    }
+
+    printf("\t\tIngrese minutos: ");
+    scanf("%d", &minutos);
+    while(minutos < 0 || minutos > 59)
+    {
+        printf("\t\tLos minutos deben estar entre 0 y 59; Ingrese nuevamente: ");
+        scanf("%d", &minutos);
+    }
+
+    printf("\n");
+
+    for(i = 0; i < arreV.tope; i++)
+    {
+        if(DarHora(DarHoraIng(arreV.arre[i])) == _hora)
+        {
+            if(DarMinutos(DarHoraIng(arreV.arre[i])) == minutos)
+            {
+                MostrarVehiculo(arreV.arre[i]);
+            }
+        }
+    }
+}
+
+void ListarCamionetasCapCarga(ArregloVeh arreV)
+{
+    int i;
+    int capCarga = 0;
+    scanf("%d", &capCarga);
+    printf("\tIngrese capacidad de carga: ");
+    for(i = 0; i < arreV.tope; i++)
+    {
+        if(DarTipoVehiculo(arreV.arre[i]) == CAMIONETA)
+            if(DarCapacidadCarga(arreV.arre[i]) > capCarga)
+                MostrarVehiculo(arreV.arre[i]);
     }
 }

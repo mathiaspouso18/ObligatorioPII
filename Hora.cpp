@@ -5,7 +5,7 @@ void CargarHora(Hora &h)
 {
     int _hora, minutos;
 
-    printf("\t\tIngrese la hora: ");
+    printf("\t\tIngrese hora: ");
     scanf("%d", &_hora);
 
     while(_hora < 8 || _hora > 22)
@@ -15,7 +15,7 @@ void CargarHora(Hora &h)
     }
     h._hora = _hora;
 
-    printf("\t\tIngrese los minutos: ");
+    printf("\t\tIngrese minutos: ");
     scanf("%d", &minutos);
     while(minutos < 0 || minutos > 59)
     {

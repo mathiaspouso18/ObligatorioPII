@@ -24,5 +24,11 @@ long int DarCedula(Vehiculo v);
 Hora DarHoraIng(Vehiculo v);
 TipoVehiculo DarTipoVehiculo(Vehiculo v);
 void DarDepartamento(Vehiculo v, String &s);
+long int DarCapacidadCarga(Vehiculo v);
+void DarModelo(Vehiculo v, String &modelo);
+void DarMarca(Vehiculo v, String &s);
+int DarAnio(Vehiculo v);
+
+
 
 #endif // VEHICULO_H_INCLUDED
