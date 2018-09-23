@@ -43,18 +43,21 @@ int DarPosicion(ArregloVeh arreV, String s)
 {
     String s1;
     boolean Existe=FALSE;
-    int i=0;
+    int i = 0, pos = -1;
     do
     {
            DarMatricula(arreV.arre[i], s1);
-           if (streq (s1,s) == TRUE)
-           Existe=TRUE;
+           if (streq (s1,s))
+           {
+                pos = i;
+                Existe=TRUE;
+           }
            else
-           i++;
+                i++;
 
     }while((i<arreV.tope)&&(Existe==FALSE));
 
-    return i;
+    return pos;
 }
 
 void RegistrarPartida (ArregloVeh &arreV)
@@ -67,7 +70,7 @@ void RegistrarPartida (ArregloVeh &arreV)
 
    p = DarPosicion(arreV, s);
 
-   if (p < arreV.tope)
+   if (p < arreV.tope && p >= 0)
    {
         printf("\tIngreso hora de salida \n");
         printf("\tIngrese hora: ");
