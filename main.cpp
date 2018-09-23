@@ -21,6 +21,8 @@ int main()
         {
             case 1: IngresarVehiculo(arreV);
             break;
+            case 2: RegistrarPartida(arreV);
+            break;
             case 3: MenuListados(opcion2);
             break;
         }

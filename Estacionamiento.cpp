@@ -57,24 +57,33 @@ int DarPosicion(ArregloVeh arreV, String s)
     return i;
 }
 
-void RegistrarPartida (ArregloVeh &arreV, Hora &h, String matricula)
+void RegistrarPartida (ArregloVeh &arreV)
 {
-    int i = 0;
-    int p = 0;
+   int i = 0, p = 0, _hora = 0, minutos = 0, ticket = 0, difHora = 0;
+   String s;
 
+   printf("\n\tIngrese matricula a eliminar: ");
+   Scan(s);
 
-   if (DarPosicion(arreV,matricula) < arreV.tope)
+   p = DarPosicion(arreV, s);
+
+   if (p < arreV.tope)
    {
-        p = DarPosicion(arreV,matricula);
+        printf("\tIngreso hora de salida \n");
+        printf("\tIngrese hora: ");
+        scanf("%d", &_hora);
+        printf("\tIngrese minutos: ");
+        scanf("%d", &minutos);
+
+        difHora = _hora - DarHora(DarHoraIng(arreV.arre[p]));
+        ticket = difHora * 100;
+
         arreV.arre[arreV.tope] = arreV.arre[p];
         for(p = p+1;p<arreV.tope;p++)
         {
            arreV.arre[p-1]=arreV.arre[p];
         }
         arreV.tope--;
-
-        printf("\t\tIngrese hora de salida: \n");
-        CargarHora(h);
    }
    else
    {
@@ -196,12 +205,15 @@ void ListarCamionetasCapCarga(ArregloVeh arreV)
 {
     int i;
     int capCarga = 0;
+    printf("\n\tIngrese capacidad de carga: ");
     scanf("%d", &capCarga);
-    printf("\tIngrese capacidad de carga: ");
+    printf("\n");
     for(i = 0; i < arreV.tope; i++)
     {
         if(DarTipoVehiculo(arreV.arre[i]) == CAMIONETA)
             if(DarCapacidadCarga(arreV.arre[i]) > capCarga)
                 MostrarVehiculo(arreV.arre[i]);
+
+                printf("\n");
     }
 }

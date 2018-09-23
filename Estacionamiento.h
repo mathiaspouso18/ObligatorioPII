@@ -17,7 +17,7 @@ boolean ExisteVehiculo(ArregloVeh arreV, String s);
 //Fado una Matricula Devolvemos su posicion en el arreglo
 int DarPosicion(ArregloVeh arreV, String s);
 //Dado una Matricula Eliminar
-void RegistrarPartida (ArregloVeh &arreV,Hora &h, String matricula);
+void RegistrarPartida (ArregloVeh &arreV);
 
 void DetallePorMatricula(ArregloVeh arreV);
 
