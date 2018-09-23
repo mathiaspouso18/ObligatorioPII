@@ -27,12 +27,18 @@ int main()
 
         switch(opcion2)
         {
+            case 2: MostrarConteoCantidades(arreV);
+            break;
+            case 3: MostrarConteoCantidades(arreV);
+            break;
+            case 4: ListarTodosVehiculos(arreV);
+            break;
             case 5: DetallePorMatricula(arreV);
             break;
         }
+        opcion2 = 0;//limpio las variables dejandolas en 0;
 
     }while(opcion != 4);
 
-    opcion = 0;//limpio las variables dejandolas en 0;
     opcion = 0;//limpio las variables dejandolas en 0;
 }

@@ -23,5 +23,6 @@ void DarMatricula(Vehiculo v, String &mat);
 long int DarCedula(Vehiculo v);
 Hora DarHoraIng(Vehiculo v);
 TipoVehiculo DarTipoVehiculo(Vehiculo v);
+void DarDepartamento(Vehiculo v, String &s);
 
 #endif // VEHICULO_H_INCLUDED

@@ -6,7 +6,8 @@ const int TAM=50;
 
 typedef struct{ Vehiculo arre[TAM];
                 int tope;
-              }ArregloVeh;
+              } ArregloVeh;
+
  // ingresar vehiculo al arreglo no registrado
 void IngresarVehiculo(ArregloVeh &arreV );
 //inicializar el tope en 0
@@ -18,6 +19,12 @@ int DarPosicion(ArregloVeh arreV, String s);
 //Dado una Matricula Eliminar
 void RegistrarPartida (ArregloVeh &arreV,Hora &h, String matricula);
 
-void DetallePorMatricula(ArregloVeh arre);
+void DetallePorMatricula(ArregloVeh arreV);
+
+void MostrarConteoCantidades(ArregloVeh arreV);
+
+void MostrarCantidadPorDepto(ArregloVeh arreV);
+
+void ListarTodosVehiculos(ArregloVeh arreV);
 
 #endif // ESTACIONAMIENTO_H_INCLUDED

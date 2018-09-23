@@ -107,3 +107,8 @@ TipoVehiculo DarTipoVehiculo(Vehiculo v)
 {
     return v.tipoV;
 }
+
+void DarDepartamento(Vehiculo v, String &s)
+{
+    StrCopy(v.departamento, s);
+}
