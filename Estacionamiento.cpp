@@ -12,7 +12,9 @@ void IngresarVehiculo(ArregloVeh &arreV)
     printf("\t\t");
     printf("Ingrese matricula: ");
     Scan(matricula);
-    if(!ExisteVehiculo(arreV, matricula))
+   if (arreV.tope != TAM)
+{
+   if(!ExisteVehiculo(arreV, matricula))
     {
         CrearVehiculo(v, matricula);
         arreV.arre[arreV.tope] = v;
@@ -23,7 +25,7 @@ void IngresarVehiculo(ArregloVeh &arreV)
         printf("\t\tYa se ingreso un vehiculo con esa matricula\n");
     }
 }
-
+}
 
 void inicializartope(ArregloVeh &v)
 {
