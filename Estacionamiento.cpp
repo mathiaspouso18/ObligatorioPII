@@ -212,9 +212,9 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
 
     for(i = 0; i < arreV.tope; i++)
     {
-        if(DarHora(DarHoraIng(arreV.arre[i])) == _hora)
+        if(DarHora(DarHoraIng(arreV.arre[i])) >= _hora && DarHora(DarHoraIng(arreV.arre[i])) <= _hora+1)
         {
-            if(DarMinutos(DarHoraIng(arreV.arre[i])) == minutos)
+            if(DarMinutos(DarHoraIng(arreV.arre[i])) >= minutos && DarMinutos(DarHoraIng(arreV.arre[i])) <= minutos+60)
             {
                 MostrarVehiculo(arreV.arre[i]);
                 contador++;
