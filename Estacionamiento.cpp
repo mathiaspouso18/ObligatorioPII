@@ -4,16 +4,18 @@ void IngresarVehiculo(ArregloVeh &arreV)
 {
     Vehiculo v;
     String matricula;
-    printf("\n\t");
-    printf("Menu Ingreso de Vehiculos");
-    printf("\n\n\t");
-    printf("Informacion de vehiculo ", arreV.tope + 1);
-    printf("\n\n");
-    printf("\t\t");
-    printf("Ingrese matricula: ");
-    Scan(matricula);
+
     if (arreV.tope < TAM)
     {
+        printf("\n\t");
+        printf("Menu Ingreso de Vehiculos");
+        printf("\n\n\t");
+        printf("Informacion de vehiculo ", arreV.tope + 1);
+        printf("\n\n");
+        printf("\t\t");
+        printf("Ingrese matricula: ");
+        Scan(matricula);
+
        if(!ExisteVehiculo(arreV, matricula))
         {
             CrearVehiculo(v, matricula);
@@ -256,7 +258,7 @@ void ListarCamionetasCapCarga(ArregloVeh arreV)
     }
 
     if(contador == 0)
-        printf("\tNo hay vehiculos registrados\n");
+        printf("\tNo hay camionetas registradas\n");
 }
 
 int CalcularTicket(int sumahora, int sumaminutos)
