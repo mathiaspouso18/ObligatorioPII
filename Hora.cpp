@@ -36,3 +36,30 @@ int DarMinutos(Hora h)
 {
     return h.minutos;
 }
+
+void calculohora(int horaE, int horaS, int minutosE, int minutosS,int  &sumahora, int &sumaminutos)
+{
+    int cantminutos = 0;
+    sumahora = horaS-horaE;
+    if (minutosE < minutosS)
+	{
+    	sumaminutos=minutosS-minutosE;
+
+	}
+	else
+	{
+	    if(minutosE > minutosS)
+        {
+            for(minutosE; minutosE <= 60; minutosE++)
+            {
+                cantminutos++;
+
+                if(minutosE == 60)
+                {
+                    sumahora = sumahora - 1;
+                    sumaminutos = cantminutos + minutosS - 1;
+                }
+            }
+        }
+    }
+}

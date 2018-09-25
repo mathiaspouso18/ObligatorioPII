@@ -40,6 +40,8 @@
 		<Unit filename="Estacionamiento.h" />
 		<Unit filename="Hora.cpp" />
 		<Unit filename="Hora.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
 		<Unit filename="String.cpp" />
 		<Unit filename="String.h" />
 		<Unit filename="TipoVehiculo.cpp" />

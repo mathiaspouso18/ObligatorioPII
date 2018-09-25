@@ -7,24 +7,28 @@ void IngresarVehiculo(ArregloVeh &arreV)
     printf("\n\t");
     printf("Menu Ingreso de Vehiculos");
     printf("\n\n\t");
-    printf("Informacion de vehiculo:", arreV.tope + 1);
+    printf("Informacion de vehiculo ", arreV.tope + 1);
     printf("\n\n");
     printf("\t\t");
     printf("Ingrese matricula: ");
     Scan(matricula);
-   if (arreV.tope != TAM)
-{
-   if(!ExisteVehiculo(arreV, matricula))
+    if (arreV.tope < TAM)
     {
-        CrearVehiculo(v, matricula);
-        arreV.arre[arreV.tope] = v;
-        arreV.tope++;
+       if(!ExisteVehiculo(arreV, matricula))
+        {
+            CrearVehiculo(v, matricula);
+            arreV.arre[arreV.tope] = v;
+            arreV.tope++;
+        }
+        else
+        {
+            printf("\t\tYa se ingreso un vehiculo con esa matricula\n");
+        }
     }
     else
     {
-        printf("\t\tYa se ingreso un vehiculo con esa matricula\n");
+        printf("\t\tEl estacionamiento esta lleno\n");
     }
-}
 }
 
 void inicializartope(ArregloVeh &v)
@@ -74,7 +78,7 @@ int DarPosicion(ArregloVeh arreV, String s)
 
 void RegistrarPartida (ArregloVeh &arreV)
 {
-   int i = 0, p = 0, _hora = 0, minutos = 0, ticket = 0, difHora = 0;
+   int p = 0, _hora = 0, minutos = 0, ticket = 0, difHora = 0;
    String s;
 
    printf("\n\tIngrese matricula a eliminar: ");
@@ -248,3 +252,15 @@ void ListarCamionetasCapCarga(ArregloVeh arreV)
     if(contador == 0)
         printf("\tNo hay vehiculos registrados\n");
 }
+
+void calcularticket(int sumahora, int sumaminutos,int &totalticket)
+{
+	totalticket = sumahora * 100;
+
+	if(sumaminutos > 0)
+    	totalticket = totalticket+60;
+
+
+}
+
+
