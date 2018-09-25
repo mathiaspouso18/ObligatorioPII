@@ -125,7 +125,7 @@ void DetallePorMatricula(ArregloVeh arreV)
     Scan(matricula);
     posicion = DarPosicion(arreV, matricula);
 
-    if(posicion < 0 || posicion > arreV.tope)
+    if(posicion < 0)
     {
         printf("\t\t");
         printf("No existe vehiculo registrado con esa matricula.");
@@ -199,7 +199,7 @@ void ListarTodosVehiculos(ArregloVeh arreV)
 
 void ListarCantidadHoraDeterminada(ArregloVeh arreV)
 {
-    int _hora, minutos, i, contador = 0;
+    int _hora = 0, minutos = 0, i, contador = 0, _horaIng = 0, _minIng = 0, _horaEnMin = 0;
 
     printf("\n\tIngreso de hora actual: \n");
     printf("\t\tIngrese hora: ");
@@ -213,6 +213,7 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
 
     printf("\t\tIngrese minutos: ");
     scanf("%d", &minutos);
+
     while(minutos < 0 || minutos > 59)
     {
         printf("\t\tLos minutos deben estar entre 0 y 59; Ingrese nuevamente: ");
@@ -223,13 +224,15 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
 
     for(i = 0; i < arreV.tope; i++)
     {
-        if(DarHora(DarHoraIng(arreV.arre[i])) >= _hora && DarHora(DarHoraIng(arreV.arre[i])) <= _hora+1)
+		_horaIng = DarHora(DarHoraIng(arreV.arre[i])) * 60;
+        _minIng = DarMinutos(DarHoraIng(arreV.arre[i]));
+		_horaEnMin = _hora * 60;
+
+        if((_horaEnMin + minutos <= _horaIng + _minIng) && (_horaEnMin + minutos + 60 >= _horaIng + _minIng))
         {
-            if(DarMinutos(DarHoraIng(arreV.arre[i])) >= 0 && DarMinutos(DarHoraIng(arreV.arre[i])) <= minutos)
-            {
-                MostrarVehiculo(arreV.arre[i]);
-                contador++;
-            }
+            MostrarVehiculo(arreV.arre[i]);
+            printf("\n");
+            contador++;
         }
     }
     if(contador == 0)
