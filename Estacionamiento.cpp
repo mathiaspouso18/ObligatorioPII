@@ -45,10 +45,10 @@ boolean ExisteVehiculo(ArregloVeh arreV, String s)
     do
     {
            DarMatricula(arreV.arre[i],s1);
-           if (streq (s1,s) == TRUE)
-           Existe=TRUE;
+           if (streq (s1,s))
+                Existe=TRUE;
            else
-           i++;
+                i++;
 
     }while((i<arreV.tope)&&(Existe==FALSE));
 
@@ -78,7 +78,7 @@ int DarPosicion(ArregloVeh arreV, String s)
 
 void RegistrarPartida (ArregloVeh &arreV)
 {
-   int p = 0, _hora = 0, minutos = 0, ticket = 0, difHora = 0;
+   int p = 0, _hora = 0, minutos = 0, ticket = 0, totalHora = 0, totalMinutos = 0;
    String s;
 
    printf("\n\tIngrese matricula a eliminar: ");
@@ -94,8 +94,9 @@ void RegistrarPartida (ArregloVeh &arreV)
         printf("\tIngrese minutos: ");
         scanf("%d", &minutos);
 
-        difHora = _hora - DarHora(DarHoraIng(arreV.arre[p]));
-        ticket = difHora * 100;
+        CalcularTiempoTranscurrido(DarHora(DarHoraIng(arreV.arre[p])), _hora, DarMinutos(DarHoraIng(arreV.arre[p])), minutos, totalHora, totalMinutos);
+
+        printf("\n\tVehiculo retirado del sistema; Tiempo estacionado: %d hs %d min Monto a pagar: %d\n", totalHora, totalMinutos, CalcularTicket(totalHora, totalMinutos));
 
         arreV.arre[arreV.tope] = arreV.arre[p];
         for(p = p+1;p<arreV.tope;p++)
@@ -220,7 +221,7 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
     {
         if(DarHora(DarHoraIng(arreV.arre[i])) >= _hora && DarHora(DarHoraIng(arreV.arre[i])) <= _hora+1)
         {
-            if(DarMinutos(DarHoraIng(arreV.arre[i])) >= minutos && DarMinutos(DarHoraIng(arreV.arre[i])) <= minutos+60)
+            if(DarMinutos(DarHoraIng(arreV.arre[i])) >= 0 && DarMinutos(DarHoraIng(arreV.arre[i])) <= minutos)
             {
                 MostrarVehiculo(arreV.arre[i]);
                 contador++;
@@ -253,14 +254,14 @@ void ListarCamionetasCapCarga(ArregloVeh arreV)
         printf("\tNo hay vehiculos registrados\n");
 }
 
-void calcularticket(int sumahora, int sumaminutos,int &totalticket)
+int CalcularTicket(int sumahora, int sumaminutos)
 {
-	totalticket = sumahora * 100;
+	int totalticket = sumahora * 100;
 
 	if(sumaminutos > 0)
-    	totalticket = totalticket+60;
+    	totalticket = totalticket + 60;
 
-
+    return totalticket;
 }
 
 

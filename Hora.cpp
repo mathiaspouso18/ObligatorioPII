@@ -37,29 +37,42 @@ int DarMinutos(Hora h)
     return h.minutos;
 }
 
-void calculohora(int horaE, int horaS, int minutosE, int minutosS,int  &sumahora, int &sumaminutos)
+void CalcularTiempoTranscurrido(int HoraEnt, int HoraSal, int MinEnt, int MinSal, int  &sumahora, int &sumaminutos)
 {
-    int cantminutos = 0;
-    sumahora = horaS-horaE;
-    if (minutosE < minutosS)
-	{
-    	sumaminutos=minutosS-minutosE;
 
-	}
-	else
-	{
-	    if(minutosE > minutosS)
+    int _horaTotal = 0, _minTotal = 0, difAHora = 0;
+
+    //Si las horas son IGUALES, solo resto los minutos ya que la diferencia de hora va a ser 0.
+    //SIEMPRE CONSIDERO COMO OBVIO QUE LA HORA DE SALIDA NO VA A SER //MENOR A LA DE ENTRADA
+    if(HoraEnt == HoraSal)
+    {
+        _minTotal = MinSal - MinEnt;
+    }
+    else
+    {
+        //Si las horas son DISTINTAS evalúo.
+        //SIEMPRE CONSIDERO COMO OBVIO QUE LA HORA DE SALIDA NO VA A SER //MENOR A LA DE ENTRADA
+
+        if(MinEnt > MinSal)
         {
-            for(minutosE; minutosE <= 60; minutosE++)
-            {
-                cantminutos++;
+            //Veo cuánto falta para completar la hora. Luego a eso le sumo lo que falta para llegar de 0 a los minutos de salida.
 
-                if(minutosE == 60)
-                {
-                    sumahora = sumahora - 1;
-                    sumaminutos = cantminutos + minutosS - 1;
-                }
-            }
+            difAHora = 60 - MinEnt;
+            _minTotal = difAHora + MinSal;
+            _horaTotal = (HoraSal - HoraEnt) - 1;
+        }
+        else if(MinEnt < MinSal)
+        {
+            _minTotal = MinSal - MinEnt;
+            _horaTotal = HoraSal - HoraEnt;
+        }
+        else
+        {
+            _horaTotal = HoraSal - HoraEnt;
         }
     }
+
+    sumahora = _horaTotal;
+    sumaminutos = _minTotal;
 }
+

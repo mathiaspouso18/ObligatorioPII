@@ -31,6 +31,6 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV);
 
 void ListarCamionetasCapCarga(ArregloVeh arreV);
 
-void calcularticket(int sumahora, int sumaminutos,int &totalticket);
+int CalcularTicket(int sumahora, int sumaminutos);
 
 #endif // ESTACIONAMIENTO_H_INCLUDED
