@@ -29,6 +29,8 @@ int main()
 
         switch(opcion2)
         {
+            case 1: TotalHastaElMomento(arreV);
+            break;
             case 2: MostrarConteoCantidades(arreV);
             break;
             case 3: MostrarCantidadPorDepto(arreV);

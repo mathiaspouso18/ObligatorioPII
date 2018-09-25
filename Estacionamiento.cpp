@@ -78,7 +78,7 @@ int DarPosicion(ArregloVeh arreV, String s)
 
 void RegistrarPartida (ArregloVeh &arreV)
 {
-   int p = 0, _hora = 0, minutos = 0, ticket = 0, totalHora = 0, totalMinutos = 0;
+   int i, p = 0, _hora = 0, minutos = 0, ticket = 0, totalHora = 0, totalMinutos = 0;
    String s;
 
    printf("\n\tIngrese matricula a eliminar: ");
@@ -86,7 +86,7 @@ void RegistrarPartida (ArregloVeh &arreV)
 
    p = DarPosicion(arreV, s);
 
-   if (p < arreV.tope && p >= 0)
+   if (p >= 0)
    {
         printf("\tIngreso hora de salida \n");
         printf("\tIngrese hora: ");
@@ -96,14 +96,18 @@ void RegistrarPartida (ArregloVeh &arreV)
 
         CalcularTiempoTranscurrido(DarHora(DarHoraIng(arreV.arre[p])), _hora, DarMinutos(DarHoraIng(arreV.arre[p])), minutos, totalHora, totalMinutos);
 
-        printf("\n\tVehiculo retirado del sistema; Tiempo estacionado: %d hs %d min Monto a pagar: %d\n", totalHora, totalMinutos, CalcularTicket(totalHora, totalMinutos));
+        printf("\n\tVehiculo retirado del sistema; Tiempo estacionado: %d hs %d min Monto a pagar: $%d\n", totalHora, totalMinutos, CalcularTicket(totalHora, totalMinutos));
 
-        arreV.arre[arreV.tope] = arreV.arre[p];
-        for(p = p+1;p<arreV.tope;p++)
-        {
-           arreV.arre[p-1]=arreV.arre[p];
-        }
-        arreV.tope--;
+		for(i = p; i <= arreV.tope - 1; i++)
+		{
+			arreV.arre[i]=arreV.arre[i+1];
+		}
+		arreV.tope--;
+
+        //arreV.arre[arreV.tope] = arreV.arre[p];
+        //for(p = p+1;p<arreV.tope;p++)
+        //
+        //arreV.tope--;
    }
    else
    {
@@ -262,6 +266,25 @@ int CalcularTicket(int sumahora, int sumaminutos)
     	totalticket = totalticket + 60;
 
     return totalticket;
+}
+
+void TotalHastaElMomento(ArregloVeh arreV)
+{
+    int _hora, minutos, i, sumaHora, sumaMinutos, _total = 0;
+
+    printf("\n\tIngrese la hora actual\n");
+    printf("\tIngrese hora: ");
+    scanf("%d", &_hora);
+    printf("\tIngrese minutos: ");
+    scanf("%d", &minutos);
+
+    for(i = 0; i < arreV.tope; i++)
+    {
+        CalcularTiempoTranscurrido(DarHora(DarHoraIng(arreV.arre[i])), _hora, DarMinutos(DarHoraIng(arreV.arre[i])), minutos, sumaHora, sumaMinutos);
+        _total = _total + CalcularTicket(sumaHora, sumaMinutos);
+    }
+
+    printf("\n\tEl total recaudado hasta las %d:%d es $%d\n", _hora, minutos, _total);
 }
 
 
