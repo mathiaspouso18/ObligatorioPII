@@ -76,9 +76,9 @@ int DarPosicion(ArregloVeh arreV, String s)
     return pos;
 }
 
-void RegistrarPartida (ArregloVeh &arreV)
+void RegistrarPartida (ArregloVeh &arreV, int &totalRec)
 {
-   int i, p = 0, _hora = 0, minutos = 0, ticket = 0, totalHora = 0, totalMinutos = 0;
+   int i, p = 0, _hora = 0, minutos = 0, ticket = 0, totalHora = 0, totalMinutos = 0, _total = 0;
    String s;
 
    printf("\n\tIngrese matricula a eliminar: ");
@@ -95,8 +95,9 @@ void RegistrarPartida (ArregloVeh &arreV)
         scanf("%d", &minutos);
 
         CalcularTiempoTranscurrido(DarHora(DarHoraIng(arreV.arre[p])), _hora, DarMinutos(DarHoraIng(arreV.arre[p])), minutos, totalHora, totalMinutos);
+        _total = CalcularTicket(totalHora, totalMinutos);
 
-        printf("\n\tVehiculo retirado del sistema; Tiempo estacionado: %d hs %d min Monto a pagar: $%d\n", totalHora, totalMinutos, CalcularTicket(totalHora, totalMinutos));
+        printf("\n\tVehiculo retirado del sistema; Tiempo estacionado: %d hs %d min Monto a pagar: $%d\n", totalHora, totalMinutos, _total);
 
 		for(i = p; i <= arreV.tope - 1; i++)
 		{
@@ -104,10 +105,7 @@ void RegistrarPartida (ArregloVeh &arreV)
 		}
 		arreV.tope--;
 
-        //arreV.arre[arreV.tope] = arreV.arre[p];
-        //for(p = p+1;p<arreV.tope;p++)
-        //
-        //arreV.tope--;
+		totalRec = _total;
    }
    else
    {
@@ -271,7 +269,7 @@ int CalcularTicket(int sumahora, int sumaminutos)
     return totalticket;
 }
 
-void TotalHastaElMomento(ArregloVeh arreV)
+void TotalHastaElMomento(ArregloVeh arreV, int &totalRec)
 {
     int _hora, minutos, i, sumaHora, sumaMinutos, _total = 0;
 
@@ -286,6 +284,8 @@ void TotalHastaElMomento(ArregloVeh arreV)
         CalcularTiempoTranscurrido(DarHora(DarHoraIng(arreV.arre[i])), _hora, DarMinutos(DarHoraIng(arreV.arre[i])), minutos, sumaHora, sumaMinutos);
         _total = _total + CalcularTicket(sumaHora, sumaMinutos);
     }
+
+    _total = _total + totalRec;
 
     printf("\n\tEl total recaudado hasta las %d:%d es $%d\n", _hora, minutos, _total);
 }

@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    int opcion, opcion2;
+    int opcion, opcion2, totalRec = 0;
     ArregloVeh arreV;
     inicializartope(arreV);
     printf("Bienvenido al control de vehiculos");
@@ -21,7 +21,7 @@ int main()
         {
             case 1: IngresarVehiculo(arreV);
             break;
-            case 2: RegistrarPartida(arreV);
+            case 2: RegistrarPartida(arreV, totalRec);
             break;
             case 3: MenuListados(opcion2);
             break;
@@ -29,7 +29,7 @@ int main()
 
         switch(opcion2)
         {
-            case 1: TotalHastaElMomento(arreV);
+            case 1: TotalHastaElMomento(arreV, totalRec);
             break;
             case 2: MostrarConteoCantidades(arreV);
             break;

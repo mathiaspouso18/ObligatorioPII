@@ -17,7 +17,7 @@ boolean ExisteVehiculo(ArregloVeh arreV, String s);
 //Fado una Matricula Devolvemos su posicion en el arreglo
 int DarPosicion(ArregloVeh arreV, String s);
 //Dado una Matricula Eliminar
-void RegistrarPartida (ArregloVeh &arreV);
+void RegistrarPartida (ArregloVeh &arreV, int &totalRec);
 
 void DetallePorMatricula(ArregloVeh arreV);
 
@@ -31,7 +31,7 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV);
 
 void ListarCamionetasCapCarga(ArregloVeh arreV);
 
-void TotalHastaElMomento(ArregloVeh arreV);
+void TotalHastaElMomento(ArregloVeh arreV, int &totalRec);
 
 int CalcularTicket(int sumahora, int sumaminutos);
 

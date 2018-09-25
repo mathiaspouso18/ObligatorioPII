@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\auto.cpp
+	"Auto.h"
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\auto.h
+	"String.h"
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\string.h
+	"boolean.h"
+	<stdio.h>
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\boolean.h
+
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\boolean.cpp
+	"boolean.h"
+
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\camioneta.cpp
+	"Camioneta.h"
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\camioneta.h
+	"String.h"
+
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\hora.cpp
+	"Hora.h"
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\hora.h
+	<stdio.h>
+
+1537917492 source:c:\users\java\desktop\obligatoriopii-master\main.cpp
+	<iostream>
+	"Estacionamiento.h"
+	"Menu.h"
+
+1537917299 c:\users\java\desktop\obligatoriopii-master\estacionamiento.h
+	"Vehiculo.h"
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\vehiculo.h
+	"Auto.h"
+	"Camioneta.h"
+	"TipoVehiculo.h"
+	"Hora.h"
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\tipovehiculo.h
+
+1537884464 c:\users\java\desktop\obligatoriopii-master\menu.h
+	<stdio.h>
+
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\menu.cpp
+	"Menu.h"
+
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\string.cpp
+	"String.h"
+
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\tipovehiculo.cpp
+	"TipoVehiculo.h"
+
+1537884464 source:c:\users\java\desktop\obligatoriopii-master\vehiculo.cpp
+	"Vehiculo.h"
+
+1537917433 source:c:\users\java\desktop\obligatoriopii-master\estacionamiento.cpp
+	"Estacionamiento.h"
+
