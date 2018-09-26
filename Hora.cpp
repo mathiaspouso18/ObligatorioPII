@@ -1,6 +1,5 @@
 #include "Hora.h"
 
-//Hora valida de 8 a 22. Minutos de 0 a 59
 void CargarHora(Hora &h)
 {
     int _hora, minutos;
@@ -39,36 +38,31 @@ int DarMinutos(Hora h)
 
 void CalcularTiempoTranscurrido(int HoraEnt, int HoraSal, int MinEnt, int MinSal, int  &sumahora, int &sumaminutos)
 {
-
     int _horaTotal = 0, _minTotal = 0, difAHora = 0;
 
     //Si las horas son IGUALES, solo resto los minutos ya que la diferencia de hora va a ser 0.
-    //SIEMPRE CONSIDERO COMO OBVIO QUE LA HORA DE SALIDA NO VA A SER //MENOR A LA DE ENTRADA
+    //SIEMPRE CONSIDERO COMO OBVIO QUE LA HORA DE SALIDA NO VA A SER MENOR A LA DE ENTRADA
     if(HoraEnt == HoraSal)
     {
         _minTotal = MinSal - MinEnt;
     }
     else
     {
+        _horaTotal = HoraSal - HoraEnt;
+
         //Si las horas son DISTINTAS evalúo.
         //SIEMPRE CONSIDERO COMO OBVIO QUE LA HORA DE SALIDA NO VA A SER //MENOR A LA DE ENTRADA
-
         if(MinEnt > MinSal)
         {
-            //Veo cuánto falta para completar la hora. Luego a eso le sumo lo que falta para llegar de 0 a los minutos de salida.
-
+            //Veo cuánto falta para completar la hora.
+            //Luego a eso le sumo lo que falta para llegar de 0 a los minutos de salida.
             difAHora = 60 - MinEnt;
             _minTotal = difAHora + MinSal;
-            _horaTotal = (HoraSal - HoraEnt) - 1;
+            _horaTotal = _horaTotal - 1;
         }
         else if(MinEnt < MinSal)
         {
             _minTotal = MinSal - MinEnt;
-            _horaTotal = HoraSal - HoraEnt;
-        }
-        else
-        {
-            _horaTotal = HoraSal - HoraEnt;
         }
     }
 

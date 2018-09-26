@@ -6,9 +6,16 @@
 const int MaxString = 20;
 typedef char String[MaxString];
 
+//Carga un string por teclado.
 void Scan(String &s);
+
+//Dados dos strings, copia el primero en el segundo.
 void StrCopy(String orig, String &copia);
+
+//Dado un string, lo imprime en pantalla.
 void Print(String s);
+
+//Dados dos strings, devuelve TRUE si son iguales, FALSE si son distintos.
 boolean streq (String s1, String s2);
 
 

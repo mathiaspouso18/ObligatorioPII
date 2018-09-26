@@ -5,6 +5,7 @@
 typedef struct{String Modelo;
                long int CapacidadCarga;} Camioneta;
 
+//Carga el tipo de vehiculo camioneta.
 void CargarCarmioneta(Camioneta &c, String s, long int x);
 
 

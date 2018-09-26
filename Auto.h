@@ -7,7 +7,7 @@ typedef struct{
           int anio;
             }Auto;
 
-
+//Carga los datos del vehiculo tipo auto.
 void CargarAuto(Auto &a, String marca, int anio);
 
 #endif // AUTO_H_INCLUDED
