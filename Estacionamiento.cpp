@@ -99,7 +99,7 @@ void RegistrarPartida (ArregloVeh &arreV, int &totalRec)
         CalcularTiempoTranscurrido(DarHora(DarHoraIng(arreV.arre[p])), _hora, DarMinutos(DarHoraIng(arreV.arre[p])), minutos, totalHora, totalMinutos);
         _total = CalcularTicket(totalHora, totalMinutos);
 
-        printf("\n\tVehiculo retirado del sistema; Tiempo estacionado: %d hs %d min Monto a pagar: $%d\n", totalHora, totalMinutos, _total);
+        printf("\n\tVehiculo retirado del sistema; Tiempo estacionado: %d hs %d min; Monto a pagar: $%d\n", totalHora, totalMinutos, _total);
 
 		for(i = p; i <= arreV.tope - 1; i++)
 		{
@@ -111,7 +111,7 @@ void RegistrarPartida (ArregloVeh &arreV, int &totalRec)
    }
    else
    {
-        printf("No se encuentra la Matricula para Registrar su partida");
+        printf("No se encuentra la matricula para registrar su partida");
    }
 }
 
@@ -127,7 +127,7 @@ void DetallePorMatricula(ArregloVeh arreV)
 
     if(posicion < 0)
     {
-        printf("\t\t");
+        printf("\n\t");
         printf("No existe vehiculo registrado con esa matricula.");
         printf("\n");
     }
