@@ -249,7 +249,7 @@ void ListarCamionetasCapCarga(ArregloVeh arreV)
     for(i = 0; i < arreV.tope; i++)
     {
         if(DarTipoVehiculo(arreV.arre[i]) == CAMIONETA)
-            if(DarCapacidadCarga(arreV.arre[i]) > capCarga)
+            if(DarCapacidadCargaVehiculo(arreV.arre[i]) > capCarga)
             {
                 MostrarVehiculo(arreV.arre[i]);
                 contador++;

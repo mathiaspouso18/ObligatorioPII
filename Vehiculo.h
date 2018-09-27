@@ -38,18 +38,17 @@ TipoVehiculo DarTipoVehiculo(Vehiculo v);
 //Devuelve el departamento donde esta matriculado el vehiculo.
 void DarDepartamento(Vehiculo v, String &s);
 
-//Devuelve la capacidad de carga del vehiculo tipo Camion.
-long int DarCapacidadCarga(Vehiculo v);
+//Retorna la capacidad de carga de la camioneta (invoca a la selectora del modulo camioneta)
+long int DarCapacidadCargaVehiculo(Vehiculo V);
 
-//Devuelve el modelo del vehiculo.
-void DarModelo(Vehiculo v, String &modelo);
+//Retorna la marca del vehiculo (invoca a la selectora del modulo auto)
+void DarMarcaVehiculo(Vehiculo v, String &s);
 
-//Devuelve la marca del vehiculo.
-void DarMarca(Vehiculo v, String &s);
+//Retorna el modelo del vehiculo (invoca a la selectora del modulo Camioneta)
+void DarModeloVehiculo(Vehiculo v, String &s);
 
-//Devuelve el año del vehiculo.
-int DarAnio(Vehiculo v);
-
+//Retorna el año del vehiculo (invoca a la selectora del modulo Auto)
+int DarAnioVehiculo(Vehiculo v);
 
 
 #endif // VEHICULO_H_INCLUDED

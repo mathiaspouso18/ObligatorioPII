@@ -60,10 +60,10 @@
 1537917433 source:c:\users\java\desktop\obligatoriopii-master\estacionamiento.cpp
 	"Estacionamiento.h"
 
-1537913062 source:c:\users\java\downloads\obligatoriopii-master\auto.cpp
+1538091541 source:c:\users\java\downloads\obligatoriopii-master\auto.cpp
 	"Auto.h"
 
-1537913062 c:\users\java\downloads\obligatoriopii-master\auto.h
+1538091915 c:\users\java\downloads\obligatoriopii-master\auto.h
 	"String.h"
 
 1537913062 c:\users\java\downloads\obligatoriopii-master\string.h
@@ -75,19 +75,19 @@
 1537913062 source:c:\users\java\downloads\obligatoriopii-master\boolean.cpp
 	"boolean.h"
 
-1537913062 source:c:\users\java\downloads\obligatoriopii-master\camioneta.cpp
+1538091729 source:c:\users\java\downloads\obligatoriopii-master\camioneta.cpp
 	"Camioneta.h"
 
-1537913062 c:\users\java\downloads\obligatoriopii-master\camioneta.h
+1538091976 c:\users\java\downloads\obligatoriopii-master\camioneta.h
 	"String.h"
 
-1537913062 source:c:\users\java\downloads\obligatoriopii-master\estacionamiento.cpp
+1538091313 source:c:\users\java\downloads\obligatoriopii-master\estacionamiento.cpp
 	"Estacionamiento.h"
 
 1537913062 c:\users\java\downloads\obligatoriopii-master\estacionamiento.h
 	"Vehiculo.h"
 
-1538090048 c:\users\java\downloads\obligatoriopii-master\vehiculo.h
+1538091672 c:\users\java\downloads\obligatoriopii-master\vehiculo.h
 	"Auto.h"
 	"Camioneta.h"
 	"TipoVehiculo.h"
@@ -98,7 +98,7 @@
 1537913062 c:\users\java\downloads\obligatoriopii-master\hora.h
 	<stdio.h>
 
-1537913062 source:c:\users\java\downloads\obligatoriopii-master\hora.cpp
+1538090102 source:c:\users\java\downloads\obligatoriopii-master\hora.cpp
 	"Hora.h"
 
 1537913062 source:c:\users\java\downloads\obligatoriopii-master\main.cpp
@@ -118,6 +118,6 @@
 1537913062 source:c:\users\java\downloads\obligatoriopii-master\tipovehiculo.cpp
 	"TipoVehiculo.h"
 
-1537913062 source:c:\users\java\downloads\obligatoriopii-master\vehiculo.cpp
+1538091992 source:c:\users\java\downloads\obligatoriopii-master\vehiculo.cpp
 	"Vehiculo.h"
 

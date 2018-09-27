@@ -6,3 +6,12 @@ void CargarAuto(Auto &a, String marca, int anio)
     a.anio = anio;
 }
 
+void DarMarcaAuto(Auto a, String &s)
+{
+    StrCopy(a.Marca, s);
+}
+
+int DarAnioAuto(Auto a)
+{
+    return a.anio;
+}

@@ -23,10 +23,10 @@ void MostrarVehiculo(Vehiculo v)
         printf("Auto");
         printf("\n\t\t");
         printf("Marca: ");
-        DarMarca(v, s);
+        DarMarcaVehiculo(v, s);
         Print(s);
         printf("\n\t\t");
-        printf("Anio: %d", DarAnio(v));
+        printf("Anio: %d", DarAnioVehiculo(v));
         printf("\n");
 
     }
@@ -35,10 +35,10 @@ void MostrarVehiculo(Vehiculo v)
         printf("Camioneta");
         printf("\n\t\t");
         printf("Modelo: ");
-        DarModelo(v, s);
+        DarModeloVehiculo(v, s);
         Print(s);
         printf("\n\t\t");
-        printf("Capacidad de carga: %d", DarCapacidadCarga(v));
+        printf("Capacidad de carga: %ld", DarCapacidadCargaVehiculo(v));
         printf("\n");
     }
 }
@@ -112,23 +112,22 @@ void DarDepartamento(Vehiculo v, String &s)
     StrCopy(v.departamento, s);
 }
 
-void DarModelo(Vehiculo v, String &modelo)
+long int DarCapacidadCargaVehiculo(Vehiculo v)
 {
-    StrCopy(v.Datos.c.Modelo, modelo);
+    return DarCapacidadCargaCamioneta(v.Datos.c);
 }
 
-long int DarCapacidadCarga(Vehiculo v)
+void DarMarcaVehiculo(Vehiculo v, String &s)
 {
-    return v.Datos.c.CapacidadCarga;
+    DarMarcaAuto(v.Datos.a, s);
 }
 
-
-void DarMarca(Vehiculo v, String &s)
+int DarAnioVehiculo(Vehiculo v)
 {
-    StrCopy(v.Datos.a.Marca, s);
+    return DarAnioAuto(v.Datos.a);
 }
 
-int DarAnio(Vehiculo v)
+void DarModeloVehiculo(Vehiculo v, String &s)
 {
-    return v.Datos.a.anio;
+    DarModeloCamioneta(v.Datos.c, s);
 }

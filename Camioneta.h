@@ -8,5 +8,10 @@ typedef struct{String Modelo;
 //Carga el tipo de vehiculo camioneta.
 void CargarCarmioneta(Camioneta &c, String s, long int x);
 
+//Devuelve la capacidad de carga del vehiculo tipo Camion.
+long int DarCapacidadCargaCamioneta(Camioneta c);
+
+//Devuelve el modelo del vehiculo.
+void DarModeloCamioneta(Camioneta c, String &modelo);
 
 #endif // CAMIONETA_H_INCLUDED
