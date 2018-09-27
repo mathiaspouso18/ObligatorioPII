@@ -43,7 +43,7 @@ long int DarCapacidadCarga(Vehiculo v);
 
 //Devuelve el modelo del vehiculo.
 void DarModelo(Vehiculo v, String &modelo);
-´
+
 //Devuelve la marca del vehiculo.
 void DarMarca(Vehiculo v, String &s);
 
