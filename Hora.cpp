@@ -7,9 +7,9 @@ void CargarHora(Hora &h)
     printf("\t\tIngrese hora: ");
     scanf("%d", &_hora);
 
-    while(_hora <= 8 || _hora >= 22)
+    while(_hora < 8 || _hora >= 22)
     {
-        printf("\t\tLa hora debe estar entre 8 y 22; Ingrese nuevamente: ");
+        printf("\t\tLa hora debe estar entre 8:00 y 21:59. El estacionamiento cierra a las 22; Ingrese nuevamente: ");
         scanf("%d", &_hora);
     }
     h._hora = _hora;

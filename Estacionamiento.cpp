@@ -111,7 +111,7 @@ void RegistrarPartida (ArregloVeh &arreV, int &totalRec)
    }
    else
    {
-        printf("No se encuentra la matricula para registrar su partida");
+        printf("\n\tNo se encuentra la matricula para registrar su partida\n");
    }
 }
 
@@ -201,7 +201,7 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
 {
     int _hora = 0, minutos = 0, i, contador = 0, _horaIng = 0, _minIng = 0, _horaEnMin = 0;
 
-    printf("\n\tIngreso de hora actual: \n");
+    printf("\n\tIngreso de hora a buscar\n");
     printf("\t\tIngrese hora: ");
     scanf("%d", &_hora);
 
@@ -222,6 +222,8 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
 
     printf("\n");
 
+    printf("\tLos vehiculos ingresados en el rango %d:%d - %d:%d son: \n\n", _hora, minutos, _hora + 1, minutos);
+
     for(i = 0; i < arreV.tope; i++)
     {
 		_horaIng = DarHora(DarHoraIng(arreV.arre[i])) * 60;
@@ -236,7 +238,7 @@ void ListarCantidadHoraDeterminada(ArregloVeh arreV)
         }
     }
     if(contador == 0)
-        printf("\tNo hay vehiculos registrados para la hora %d:%d\n", _hora, minutos);
+        printf("\tNo hay vehiculos registrados en el rango %d:%d - %d:%d\n", _hora, minutos, _hora + 1, minutos);
 }
 
 void ListarCamionetasCapCarga(ArregloVeh arreV)
